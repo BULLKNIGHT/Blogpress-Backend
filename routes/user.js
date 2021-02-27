@@ -16,8 +16,10 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
+  console.log(req.body);
   const { userName, password, email } = req.body;
   const existingUser = await userModel.findOne({ userName });
+  
   if (isNullOrUndefined(existingUser)) {
     const hashPwd = bcrypt.hashSync(password, SALT);
     const newUser = new userModel({ userName, password: hashPwd, email });

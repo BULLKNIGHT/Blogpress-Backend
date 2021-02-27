@@ -33,6 +33,6 @@ app.use("/", require("./routes/user"));
 app.use("/blogs", require("./routes/blog"));
 app.use("/rates", require("./routes/rate"));
 
-app.listen(process.env.PORT, () => {
+app.listen(8888, () => {
   console.log("Server listen at port 9999!");
 });
